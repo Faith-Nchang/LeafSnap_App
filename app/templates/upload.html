@@ -1,15 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <h1 class="title">
-        Upload a Leaf Image
-    </h1>
-    
-</body>
-</html>
+{% block title %}Upload - LeafSnap Exlore{% endblock %}
+
+{% block content %}
+    <div class="container upload-container">
+        <h1 class="title">Upload a Leaf Image</h1>
+
+        <div class="upload-section">
+           <form action="{{ url_for('main.upload') }}" method="post" enctype="multipart/form-data" >
+                <input id="fileInput" type="file" name="leaf_image"  required style="display: none;">
+                <div id="uploadDiv" class="uploadDiv">
+                    <i class="fa-solid fa-upload icon upload-icon"></i>
+
+                    <label for="fileInput" id="upload-label">
+                        <p>Click to upload a leaf image </p>
+                    </label>
+
+                     
+                </div>
+                <!-- post request for prediction -->
+                <button class="btn upload-btn" type="submit"  onclick="submitForm()">
+                    Upload
+                </button>
+             </form>
+
+                {% if alert_message == "Success!" %}
+
+                        <div class="alert alert-success" role="alert">
+                            File has been uploaded successfully!
+                        </div>
+                    
+                {% endif %}
+                {% if alert_message == "Error!" %}
+
+                    <div class="alert alert-danger" role="alert">
+                        {{ alert_message }} uploading the file. Please try again.
+                    </div>
+
+                {% endif %}
+          
+        </div>
+
+        <!-- image analysis and prediction -->
+        <div>
+            {% if file %}
+                <h2 class="title">Image Analysis and Prediction</h2>
+            {% endif %}
+
+            <div class="analysis-section">
+                <div class="img">
+                    {% if file %}
+                        <img src="{{ url_for('static', filename='uploads/' + file.filename) }}" alt="Uploaded Leaf Image" class="uploaded-image">
+                    {% endif %}
+                </div>
+                <div class="prediction">
+                    {% if predictions %}
+
+                        <h1 class="title">Predictions</h1>
+                        <p class="prediction-text">
+                            Coming soon
+                        </p>
+                       
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+
+{% endblock %}

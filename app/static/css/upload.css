@@ -1,0 +1,59 @@
+#uploadDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ccc;
+    padding: 50px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    margin: 20px;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.upload-icon {
+    font-size: 50px;
+}
+
+.upload-btn {
+
+    justify-content: center;
+    align-items: center;
+    margin: 20px 10px;
+}
+
+.upload-container {
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.upload-section {
+    max-width: 2000px;
+}
+
+.uploaded-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.analysis-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.analysis-section > .img,
+.analysis-section > .prediction {
+    flex: 1 1 300px; 
+    max-width: 50%;
+}

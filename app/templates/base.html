@@ -7,8 +7,8 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upload.css') }}">
     
-    <!-- Optional Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -26,12 +26,11 @@
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Faith Nchang</p>
-    </footer>
+    
 
     <!-- JavaScript -->
     <script src="{{ url_for('static', filename='js/homescript.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, current_app
 import os
 
 
@@ -15,5 +15,17 @@ def index():
 @main.route("/upload", methods=["GET", "POST"])
 def upload():
     if request.method == "POST":
-       print("File uploaded")
+        file = request.files.get("leaf_image")
+        if file:
+            # Save the file to a specific directory
+            if file and file.filename:
+                upload_folder = os.path.join(current_app.root_path, 'static', 'uploads')
+                os.makedirs(upload_folder, exist_ok=True)
+                file_path = os.path.join(upload_folder, file.filename)
+                file.save(file_path)
+
+            # Process the uploaded file (e.g., save it, analyze it, etc.)
+            return render_template("upload.html", alert_message="Success!", file=file)
+        else:
+            return render_template("upload.html", alert_message="Error!")
     return render_template("upload.html")
