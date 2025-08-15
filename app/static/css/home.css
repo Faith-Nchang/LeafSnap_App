@@ -1,10 +1,33 @@
+.navbar {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    margin-bottom: 20px;
+    padding: 15px 0;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+    font-size: large;
+}
+
 body{
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 .container {
     background-color: white;
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -16,10 +39,81 @@ body{
     font-weight: bold;
     margin-bottom: 20px;
     color: green;
+    text-align: center;
+}
+
+.home-section, .features-section, .benefits-section, .get-started-section {
+    margin-bottom: 60px;
+    text-align: center;
+    padding: 40px 0;
 }
 
 .home-section {
-    margin-bottom: 40px;
-    text-align: center;
-    padding: 40px 0;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    padding: 200px 0;
+
+
+}
+
+.btn {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+.btn:hover {
+    background-color: darkgreen;
+
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+    height: 200px;   
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.icon {
+    color: green;
+    margin-right: 10px; 
+}
+
+li {
+   margin: 10px 5px 20px 5px;
+
+    
 }

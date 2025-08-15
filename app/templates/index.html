@@ -1,70 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeafSnap</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
-</head>
-<body >
+{% extends 'base.html' %}
+
+{% block title %}Home - LeafSnap{% endblock %}
+
+{% block content %}
+
 
     <div class="container">
 
+
+
         <div class="home-section">
+
             <h1>Welcome to <strong class="title">LeafSnap Exploration</strong></h1>
             <p>Your one-stop solution for plant leaf identification.</p>
-            <button class="btn" onclick="">
+          <form action="{{ url_for('main.upload') }}" method="GET">
+            <button class="btn"  type="submit">
                 Get Started
             </button>
+          </form>
 
         </div>
-        <div>
+        <div class="features-section">
             <h1 class="title">Features</h1>
-            <div class="card">
-                <ul>
-                    <li>Upload a leaf image</li>
-                    <li>Get plant species identification</li>
-                    <li>View plant information and care tips</li>
-                </ul>
-            </div>
+            <div class="card-container">
+                <div class="card">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check icon"></i>A machine learning model to classify leaves</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Image recognition technology (TensorFlow, Transfer learning)</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>View plant information and care tips</li>
+                    </ul>
 
-            <div class="card">
-                <ul>
-                    <li>Image Database</li>
-                    <li>Plant Care Tips</li>
-                </ul>
+                </div>
+                <div class="card">
+                        <ul>
+                            <li> <i class="fa-solid fa-circle-check icon"></i>Upload a leaf image</li>
+                            <li><i class="fa-solid fa-circle-check icon"></i>Get plant species identification</li>
+                            <li><i class="fa-solid fa-circle-check icon"></i>View plant information and care tips</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Image Database</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Plant Care Tips</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Love for our plants</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <div>
+        <div class="benefits-section">
             <h1 class="title">Benefits</h1>
 
-            <div>
-                <ul>
-                    <li>Easy plant identification</li>
-                    <li>Learn about different plant species</li>
-                    <li>Improve your gardening skills</li>
-                </ul>
+            <div class="card-container">
+
+                <div class="card">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Easy plant identification</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Learn about different plant species</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Improve your gardening skills</li>
+                    </ul>
+                 </div>
+
+                <div class="card">
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Save time in identifying plants</li>
+                        <li><i class="fa-solid fa-circle-check icon"></i>Access a community of plant enthusiasts</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div>
-                <ul>
-                    <li>Save time in identifying plants</li>
-                    <li>Access a community of plant enthusiasts</li>
-                </ul>
-            </div>
+           
         </div>
 
-        <div>
+        <div class="get-started-section">
             <h1 class="title">Get Started</h1>
-            <p>Ready to identify your plant? Upload a photo now!</p>
+            <p>Ready to identify your plant? </p>
+            <form action="{{ url_for('main.upload') }}" method="post">
+                <button class="btn" type="submit">
+                    Upload an Image
+                </button>
+            </form>
         </div>
     
 
-        <footer>
-            <p>&copy; Faith Nchang</p>
-        </footer>
-
-</div>
-</body>
-</html>
+{% endblock %}
