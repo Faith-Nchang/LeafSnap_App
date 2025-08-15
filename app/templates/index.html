@@ -4,11 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeafSnap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
-<body>
+<body >
 
-    <h1>Welcome to LeafSnap</h1>
-    <p>Your one-stop solution for plant leaf identification.</p>
+    <div class="container">
 
+        <div class="home-section">
+            <h1>Welcome to <strong class="title">LeafSnap Exploration</strong></h1>
+            <p>Your one-stop solution for plant leaf identification.</p>
+            <button class="btn" onclick="">
+                Get Started
+            </button>
+
+        </div>
+        <div>
+            <h1 class="title">Features</h1>
+            <div class="card">
+                <ul>
+                    <li>Upload a leaf image</li>
+                    <li>Get plant species identification</li>
+                    <li>View plant information and care tips</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <ul>
+                    <li>Image Database</li>
+                    <li>Plant Care Tips</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="title">Benefits</h1>
+
+            <div>
+                <ul>
+                    <li>Easy plant identification</li>
+                    <li>Learn about different plant species</li>
+                    <li>Improve your gardening skills</li>
+                </ul>
+            </div>
+
+            <div>
+                <ul>
+                    <li>Save time in identifying plants</li>
+                    <li>Access a community of plant enthusiasts</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <h1 class="title">Get Started</h1>
+            <p>Ready to identify your plant? Upload a photo now!</p>
+        </div>
+    
+
+        <footer>
+            <p>&copy; Faith Nchang</p>
+        </footer>
+
+</div>
 </body>
 </html>
