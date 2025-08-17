@@ -24,8 +24,20 @@ def upload():
                 file_path = os.path.join(upload_folder, file.filename)
                 file.save(file_path)
 
+        
+
             # Process the uploaded file (e.g., save it, analyze it, etc.)
             return render_template("upload.html", alert_message="Success!", file=file)
         else:
             return render_template("upload.html", alert_message="Error!")
     return render_template("upload.html")
+
+
+# predict route
+@main.route("/predict", methods=["POST"])
+def predict():
+    # get the uploaded file
+    file = request.files.get("leaf_image")
+    if file:
+        return "prediction"
+    return "No file uploaded"

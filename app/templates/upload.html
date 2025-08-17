@@ -24,13 +24,7 @@
                 </button>
              </form>
 
-                {% if alert_message == "Success!" %}
-
-                        <div class="alert alert-success" role="alert">
-                            File has been uploaded successfully!
-                        </div>
-                    
-                {% endif %}
+               
                 {% if alert_message == "Error!" %}
 
                     <div class="alert alert-danger" role="alert">
@@ -44,7 +38,7 @@
         <!-- image analysis and prediction -->
         <div>
             {% if file %}
-                <h2 class="title">Image Analysis and Prediction</h2>
+                <h2 class="title analysis-title">Image Analysis and Prediction</h2>
             {% endif %}
 
             <div class="analysis-section">
@@ -62,7 +56,13 @@
                         </p>
                        
                     {% endif %}
-                    
+
+                    {% if not predictions %}
+                       <button class="btn predict-btn" type="submit" formaction="{{ url_for('main.predict') }}">
+                           Predict
+                       </button>
+                    {% endif %}
+
                 </div>
             </div>
         </div>
