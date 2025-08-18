@@ -40,6 +40,7 @@
     max-height: 400px;
     border-radius: 10px;
     margin-top: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .analysis-section {
@@ -60,4 +61,10 @@
 
 .analysis-title {
     margin-bottom: 50px;
+}
+
+.alert-danger {
+    color: red;
+    border-color: #f5c6cb;
+    font-size: 20px;
 }

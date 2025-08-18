@@ -51,16 +51,16 @@
                     {% if predictions %}
 
                         <h1 class="title">Predictions</h1>
-                        <p class="prediction-text">
-                            Coming soon
-                        </p>
+                         <p>
+                            The leaf image belongs to the {{ predictions }} class.
+                         </p>
                        
                     {% endif %}
 
-                    {% if not predictions %}
-                       <button class="btn predict-btn" type="submit" formaction="{{ url_for('main.predict') }}">
-                           Predict
-                       </button>
+                    {% if prediction_error %}
+                        <div class="alert alert-danger" role="alert">
+                            {{ prediction_error }}
+                        </div>
                     {% endif %}
 
                 </div>
