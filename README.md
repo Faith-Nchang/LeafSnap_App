@@ -4,6 +4,8 @@
 
 LeafSnap is a deep learning-based web application that identifies plant species from leaf images. This project leverages a convolutional neural network (CNN) trained on the LeafSnap dataset and exposes a Flask-based interface for predictions.
 
+Just a college girl expression love for Computer Vision
+
 ---
 
 ## **Features**
@@ -73,7 +75,7 @@ leafsnap_app/
 1. Clone the repository:
 
    ```bash
-   git clone <your-repo-url>
+   git clone [https://github.com/Faith-Nchang/LeafSnap_App.git]
    cd leafsnap_app
    ```
 
@@ -105,13 +107,7 @@ leafsnap_app/
 3. The app will predict the species using the trained CNN model.
 
 
----
 
-## **Credits**
-
-* LeafSnap Dataset: Kaggle
-* Flask Framework: [Flask](https://flask.palletsprojects.com/)
-* TensorFlow/Keras: [TensorFlow](https://www.tensorflow.org/)
 
 ---
 
