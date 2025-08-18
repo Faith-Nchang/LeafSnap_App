@@ -4,7 +4,7 @@
 
 LeafSnap is a deep learning-based web application that identifies plant species from leaf images. This project leverages a convolutional neural network (CNN) trained on the LeafSnap dataset and exposes a Flask-based interface for predictions.
 
-Just a college girl expression love for Computer Vision
+Just a college girl expressing love for Computer Vision
 
 ---
 
