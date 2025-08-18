@@ -45,7 +45,7 @@ def upload():
                 file.save(file_path)
             
             # make a prediction
-            preds = predict(file_path)
+            preds = model.predict(file_path)
             # an error occurred during prediction
 
             if preds[1] != 200:
@@ -57,38 +57,3 @@ def upload():
             return render_template("upload.html", alert_message="Error!")
     return render_template("upload.html")
 
-
-def predict(file_path):
-    """
-    Predict the species of the uploaded leaf image.
-    """
-    if not file_path:
-        return {"error": "No file path provided."}, 400
-
-    try:
-        img_array = load_and_preprocess_image(file_path)
-        print(model.input_shape)
-        preds = model.predict(img_array)
-        print("Predictions:", preds)
-
-        predicted_class = np.argmax(preds, axis=1)
-
-        index = predicted_class[0]
-
-        return CLASS_NAMES[index], 200
-
-    except Exception:
-        
-        return {"error": "Prediction failed."}, 500
-       
-
-def load_and_preprocess_image(img_path, target_size=(224, 224)):
-    # Load the image
-    img = image.load_img(img_path, target_size=target_size)
-    # Convert to array
-    img_array = image.img_to_array(img)
-    # Add batch dimension
-    img_array = np.expand_dims(img_array, axis=0)
-    # Scale pixel values if your model was trained on normalized images
-    img_array /= 255.0
-    return img_array
